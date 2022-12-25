@@ -14,8 +14,7 @@ public class Obstacles : KinematicBody2D
     {   
         _velocity.y += gravity * delta;
         _velocity.x -= speed * delta;
-        GD.Print(_velocity.x);
-        _velocity = MoveAndSlide(_velocity,Vector2.Up,false,4,0.785398f,false);
+        _velocity = MoveAndSlide(_velocity,Vector2.Up);
     }
 
 }
