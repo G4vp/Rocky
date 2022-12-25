@@ -4,18 +4,18 @@ using System;
 public class Rocky : KinematicBody2D
 {
 
-    private int Jump = -400;
+    private int Jump = -470;
     private int Gravity = 1400;
     private Vector2 _velocity = new Vector2();
 
     bool Jumped = false;
     public override void _Ready()
     {
-
     }
     public override void _PhysicsProcess(float delta)
     {
         GetInput();
+        _velocity.x = 0;
         _velocity.y += Gravity * delta;
         if(Jumped && IsOnFloor()){
             _velocity.y += Jump;

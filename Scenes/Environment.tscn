@@ -49,7 +49,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 128, 40 )
+extents = Vector2( 184, 40 )
 
 [node name="Environment" type="StaticBody2D"]
 script = ExtResource( 2 )
@@ -58,10 +58,10 @@ script = ExtResource( 2 )
 position = Vector2( 128, 184 )
 frames = SubResource( 10 )
 animation = "SandMoving"
-frame = 2
+frame = 6
 speed_scale = 1.5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 128, 184 )
+position = Vector2( 136, 184 )
 shape = SubResource( 11 )
