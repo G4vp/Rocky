@@ -6,6 +6,7 @@
 extents = Vector2( 16, 6 )
 
 [node name="Wood" type="KinematicBody2D"]
+collision_mask = 257
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )

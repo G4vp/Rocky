@@ -52,13 +52,15 @@ animations = [ {
 extents = Vector2( 184, 40 )
 
 [node name="Environment" type="StaticBody2D"]
+collision_layer = 256
+collision_mask = 256
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 128, 184 )
 frames = SubResource( 10 )
 animation = "SandMoving"
-frame = 6
+frame = 1
 speed_scale = 1.5
 playing = true
 
