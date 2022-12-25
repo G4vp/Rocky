@@ -14,7 +14,6 @@ public class ObstacleDestroyer : Area2D
     }
 
     public void ObstacleEntered(PhysicsBody2D body){
-        GD.Print(body.Name, " Destroyed");
         body.QueueFree();
     }
 }
