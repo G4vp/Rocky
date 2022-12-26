@@ -3,20 +3,13 @@ using System;
 
 public class ObstacleSpawn : Node2D
 {   
-
     PackedScene WoodScene;
     PackedScene RocksScene;
-
     int ObstacleTurn = 0;
-
     public override void _Ready()
     {
-
         WoodScene = GD.Load<PackedScene>("res://Scenes/Wood.tscn");
         RocksScene = GD.Load<PackedScene>("res://Scenes/Rocks.tscn");
-
-
-        
     }
 
     public void TimeOut(){
@@ -36,7 +29,6 @@ public class ObstacleSpawn : Node2D
                 ObstacleTurn = 0;
                 break;
         }
-        GD.Print(ObstacleTurn);
     }   
 
 }
