@@ -19,11 +19,6 @@ public class ObstacleSpawn : Node2D
         
     }
 
-    public override void _Process(float delta)
-    {
-        
-    }
-
     public void TimeOut(){
         Spawn();
     }

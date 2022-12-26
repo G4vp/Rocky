@@ -3,12 +3,11 @@
 [ext_resource path="res://Scenes/Environment.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Rocky.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/ObstacleSpawn.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/ObstacleDestroyer.cs" type="Script" id=6]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 4 )
+[ext_resource path="res://Scenes/ObstacleDestroyer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/GameState.cs" type="Script" id=5]
 
 [node name="Main" type="Node2D"]
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -19,15 +18,8 @@ scale = Vector2( 1, 1.00242 )
 [node name="Rocky" parent="." instance=ExtResource( 2 )]
 position = Vector2( 120, 136 )
 
-[node name="ObstacleDestroyer" type="Area2D" parent="."]
-script = ExtResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleDestroyer"]
-position = Vector2( -48, 136 )
-rotation = 1.57079
-shape = SubResource( 1 )
+[node name="ObstacleDestroyer" parent="." instance=ExtResource( 4 )]
+position = Vector2( -24, 136 )
 
 [node name="ObstacleSpawn" parent="." instance=ExtResource( 3 )]
 position = Vector2( 288, 88 )
-
-[connection signal="body_entered" from="ObstacleDestroyer" to="ObstacleDestroyer" method="ObstacleEntered"]
