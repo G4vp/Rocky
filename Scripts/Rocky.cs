@@ -23,4 +23,12 @@ public class Rocky : KinematicBody2D
             Jumped = true;           
         }
     }
+
+    public void PlayerCollidesBody(){
+        
+    }
+
+    public void PlayerCollidesArea(){
+
+    }
 }
