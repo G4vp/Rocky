@@ -24,7 +24,7 @@ public class Rocky : KinematicBody2D
         }
     }
 
-    public void PlayerCollidesBody(){
+    public void PlayerCollidesBody(PhysicsBody2D body2D){
         
     }
 
