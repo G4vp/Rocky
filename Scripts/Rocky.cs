@@ -32,6 +32,7 @@ public class Rocky : KinematicBody2D
         
     }
 
+    // If the player collides with a collectable ( Orange Ball ) it destroy it and increase the score
     public void PlayerCollidesArea(Area2D area){
         if(area.Name == "OrangeBallArea2D"){
             area.GetParent().QueueFree();
