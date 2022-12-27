@@ -4,9 +4,13 @@ using System;
 public class Rocky : KinematicBody2D
 {
     private int Jump = -470;
+    private bool Jumped = false;
+
     private int Gravity = 1400;
     private Vector2 _velocity = new Vector2();
-    bool Jumped = false;
+    
+    public int PlayerScore = 0;
+
     public override void _PhysicsProcess(float delta)
     {
         GetInput();
@@ -24,11 +28,14 @@ public class Rocky : KinematicBody2D
         }
     }
 
-    public void PlayerCollidesBody(PhysicsBody2D body2D){
+    public void PlayerCollidesBody(PhysicsBody2D body){
         
     }
 
-    public void PlayerCollidesArea(){
-
+    public void PlayerCollidesArea(Area2D area){
+        if(area.Name == "OrangeBallArea2D"){
+            area.GetParent().QueueFree();
+            PlayerScore++;
+        }
     }
 }

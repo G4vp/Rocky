@@ -22,6 +22,5 @@ public class OrangeBall : KinematicBody2D
     // Function that moves the node in a vertical random position ( -30 <= y <= 48,  from parent node)
     public void VerticalRandomPosition(int y){
         Position = new Vector2(Position.x,y);
-        GD.Print(Position.y);   
     }
 }

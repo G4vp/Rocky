@@ -10,6 +10,8 @@ radius = 4.0
 radius = 4.0
 
 [node name="OrangeBall" type="KinematicBody2D"]
+collision_layer = 32
+collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -18,7 +20,8 @@ texture = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="OrangeBallArea2D" type="Area2D" parent="."]
+collision_layer = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrangeBallArea2D"]
 shape = SubResource( 2 )
