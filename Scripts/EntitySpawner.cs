@@ -5,18 +5,26 @@ public class EntitySpawner : Node2D
 {   
     PackedScene WoodScene;
     PackedScene RocksScene;
+
+    PackedScene OrangeBallScene;
     int ObstacleTurn = 0;
     public override void _Ready()
     {
         WoodScene = GD.Load<PackedScene>("res://Scenes/Wood.tscn");
         RocksScene = GD.Load<PackedScene>("res://Scenes/Rocks.tscn");
+
+        OrangeBallScene = GD.Load<PackedScene>("res://Scenes/OrangeBall.tscn");
     }
 
-    public void TimeOut(){
-        Spawn();
+    public void OnTimerObstacles(){
+        ObstacleSpawn();
     }
 
-    public void Spawn(){
+    public void OnTimerCollectables(){
+
+    }
+
+    public void ObstacleSpawn(){
         switch(ObstacleTurn){
             case 0:
                 var WoodInstance = WoodScene.Instance();
@@ -31,4 +39,7 @@ public class EntitySpawner : Node2D
         }
     }   
 
+    public void CollectableSpawn(){
+
+    }
 }
