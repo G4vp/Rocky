@@ -7,9 +7,10 @@ public class EntitySpawner : Node2D
     PackedScene RocksScene;
 
     PackedScene OrangeBallScene;
-    int ObstacleTurn = 0;
+    RandomNumberGenerator rng = new RandomNumberGenerator();
     public override void _Ready()
     {
+        rng.Randomize();
         WoodScene = GD.Load<PackedScene>("res://Scenes/Wood.tscn");
         RocksScene = GD.Load<PackedScene>("res://Scenes/Rocks.tscn");
 
@@ -25,16 +26,16 @@ public class EntitySpawner : Node2D
     }
 
     public void ObstacleSpawn(){
-        switch(ObstacleTurn){
+        int MyRandomNumber = rng.RandiRange(0,1);
+        
+        switch(MyRandomNumber){
             case 0:
                 var WoodInstance = WoodScene.Instance();
                 AddChild(WoodInstance);
-                ObstacleTurn = 1;
                 break;
             case 1:
                 var RocksInstance = RocksScene.Instance();
                 AddChild(RocksInstance);
-                ObstacleTurn = 0;
                 break;
         }
     }   

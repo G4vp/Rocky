@@ -19,7 +19,7 @@ public class OrangeBall : KinematicBody2D
         MoveAndCollide(_velocity);
     }
 
-    // Function that moves the node in a vertical random position ( -30 <= y <= 48,  from parent node)
+    // Function that moves the node in a vertical random position ( -30 <= y <= 40,  from parent node)
     public void VerticalRandomPosition(int y){
         Position = new Vector2(Position.x,y);
     }
