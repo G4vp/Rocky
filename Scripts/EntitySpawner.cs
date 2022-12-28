@@ -11,12 +11,12 @@ public class EntitySpawner : Node2D
     public override void _Ready()
     {
         rng.Randomize();
-        WoodScene = GD.Load<PackedScene>("res://Scenes/Wood.tscn");
-        RocksScene = GD.Load<PackedScene>("res://Scenes/Rocks.tscn");
-        ParrotScene = GD.Load<PackedScene>("res://Scenes/Parrot.tscn");
+        WoodScene = GD.Load<PackedScene>("res://Scenes/Entities/Wood.tscn");
+        RocksScene = GD.Load<PackedScene>("res://Scenes/Entities/Rocks.tscn");
+        ParrotScene = GD.Load<PackedScene>("res://Scenes/Entities/Parrot.tscn");
 
-
-        OrangeBallScene = GD.Load<PackedScene>("res://Scenes/OrangeBall.tscn");
+    
+        OrangeBallScene = GD.Load<PackedScene>("res://Scenes/Entities/OrangeBall.tscn");
     }
 
     public void OnTimerObstacles(){
