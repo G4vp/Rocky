@@ -1,10 +1,2 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-﻿41013
-=======
-﻿37285
->>>>>>> rigidBall
-=======
-﻿43245
->>>>>>> rigidBall
+﻿39407
 /home/gviera/.local/share/Steam/steamapps/common/Godot Engine/godot.x11.opt.tools.64
