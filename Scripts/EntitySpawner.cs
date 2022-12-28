@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class ObstacleSpawn : Node2D
+public class EntitySpawner : Node2D
 {   
     PackedScene WoodScene;
     PackedScene RocksScene;
