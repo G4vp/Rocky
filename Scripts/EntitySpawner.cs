@@ -7,6 +7,8 @@ public class EntitySpawner : Node2D
     PackedScene RocksScene;
     PackedScene ParrotScene;
     PackedScene OrangeBallScene;
+
+    Timer ObstacleTimer;
     RandomNumberGenerator rng = new RandomNumberGenerator();
     public override void _Ready()
     {
@@ -15,11 +17,14 @@ public class EntitySpawner : Node2D
         RocksScene = GD.Load<PackedScene>("res://Scenes/Entities/Rocks.tscn");
         ParrotScene = GD.Load<PackedScene>("res://Scenes/Entities/Parrot.tscn");
 
-    
         OrangeBallScene = GD.Load<PackedScene>("res://Scenes/Entities/OrangeBall.tscn");
+
+        ObstacleTimer = GetNode<Timer>("ObstaclesTimer");
     }
 
     public void OnTimerObstacles(){
+        int WaitTimeRandomized = rng.RandiRange(1,3);
+        ObstacleTimer.WaitTime = WaitTimeRandomized;
         ObstacleSpawn();
     }
 
