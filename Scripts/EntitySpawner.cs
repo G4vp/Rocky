@@ -5,7 +5,7 @@ public class EntitySpawner : Node2D
 {   
     PackedScene WoodScene;
     PackedScene RocksScene;
-
+    PackedScene ParrotScene;
     PackedScene OrangeBallScene;
     RandomNumberGenerator rng = new RandomNumberGenerator();
     public override void _Ready()
@@ -13,6 +13,8 @@ public class EntitySpawner : Node2D
         rng.Randomize();
         WoodScene = GD.Load<PackedScene>("res://Scenes/Wood.tscn");
         RocksScene = GD.Load<PackedScene>("res://Scenes/Rocks.tscn");
+        ParrotScene = GD.Load<PackedScene>("res://Scenes/Parrot.tscn");
+
 
         OrangeBallScene = GD.Load<PackedScene>("res://Scenes/OrangeBall.tscn");
     }
@@ -26,7 +28,7 @@ public class EntitySpawner : Node2D
     }
 
     public void ObstacleSpawn(){
-        int MyRandomNumber = rng.RandiRange(0,1);
+        int MyRandomNumber = rng.RandiRange(0,2);
         
         switch(MyRandomNumber){
             case 0:
@@ -37,7 +39,12 @@ public class EntitySpawner : Node2D
                 var RocksInstance = RocksScene.Instance();
                 AddChild(RocksInstance);
                 break;
+            case 2:
+                var ParrotInstance = ParrotScene.Instance();
+                AddChild(ParrotInstance);
+                break;
         }
+        GD.Print(MyRandomNumber);
     }   
 
     public void CollectableSpawn(){
