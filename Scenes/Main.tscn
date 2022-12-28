@@ -19,4 +19,4 @@ position = Vector2( 120, 136 )
 position = Vector2( -32, 136 )
 
 [node name="EntitySpawner" parent="." instance=ExtResource( 3 )]
-position = Vector2( 280, 112 )
+position = Vector2( 280, 96 )

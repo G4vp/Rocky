@@ -4,7 +4,8 @@
 [ext_resource path="res://Scripts/Obstacles.cs" type="Script" id=2]
 
 [node name="Rocks" type="KinematicBody2D"]
-collision_mask = 257
+collision_layer = 4
+collision_mask = 769
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

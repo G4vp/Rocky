@@ -9,7 +9,7 @@ public class OrangeBall : KinematicBody2D
 
     public override void _Ready(){
         rng.Randomize();
-        int MyRandomNumber = rng.RandiRange(-30,48);
+        int MyRandomNumber = rng.RandiRange(-30,40);
         VerticalRandomPosition(MyRandomNumber);
     }
     

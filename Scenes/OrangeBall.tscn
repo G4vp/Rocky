@@ -11,7 +11,7 @@ radius = 4.0
 
 [node name="OrangeBall" type="KinematicBody2D"]
 collision_layer = 32
-collision_mask = 0
+collision_mask = 512
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

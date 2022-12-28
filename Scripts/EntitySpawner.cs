@@ -21,7 +21,7 @@ public class EntitySpawner : Node2D
     }
 
     public void OnTimerCollectables(){
-
+        CollectableSpawn();
     }
 
     public void ObstacleSpawn(){
@@ -40,6 +40,7 @@ public class EntitySpawner : Node2D
     }   
 
     public void CollectableSpawn(){
-
+        var OrangeBallInstance = OrangeBallScene.Instance();
+        AddChild(OrangeBallInstance);
     }
 }
