@@ -1,22 +1,22 @@
 using Godot;
 using System;
 
-public class OrangeBall : KinematicBody2D
+public class OrangeBall : RigidBody2D
 {
-    private int speed = 50;
     private Vector2 _velocity = new Vector2();
     private RandomNumberGenerator rng = new RandomNumberGenerator();
 
     public override void _Ready(){
         rng.Randomize();
-        int MyRandomNumber = rng.RandiRange(-30,40);
+        int MyRandomNumber = rng.RandiRange(-40,0);
         VerticalRandomPosition(MyRandomNumber);
     }
     
     public override void _PhysicsProcess(float delta)
     {   
-        _velocity.x = -(speed * delta);
-        MoveAndCollide(_velocity);
+        int MyRandomNumber = rng.RandiRange(-30,-15);
+        _velocity.x = MyRandomNumber;
+        AppliedForce = _velocity;
     }
 
     // Function that moves the node in a vertical random position ( -30 <= y <= 40,  from parent node)
