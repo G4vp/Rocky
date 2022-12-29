@@ -5,11 +5,16 @@ public class Player : KinematicBody2D
 {
     private int Jump = -470;
     private bool Jumped = false;
-
     private int Gravity = 1400;
     private Vector2 _velocity = new Vector2();
-    
     public int PlayerScore = 0;
+    public bool GameOver = false;
+
+    AnimatedSprite PlayerAnimatedSprite;
+    public override void _Ready()
+    {
+        PlayerAnimatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+    }
 
     public override void _PhysicsProcess(float delta)
     {
@@ -29,7 +34,7 @@ public class Player : KinematicBody2D
     }
 
     public void PlayerCollidesBody(PhysicsBody2D body){
-        
+        GameOver = true;
     }
 
     // If the player collides with a collectable ( Orange Ball ) it destroy it and increases the score
@@ -38,5 +43,16 @@ public class Player : KinematicBody2D
             area.GetParent().QueueFree();
             PlayerScore++;
         }
+    }
+
+    public void StopPlayer(){
+        SetPhysicsProcess(false);
+        PlayerAnimatedSprite.Stop();
+    }
+    
+    public void ResetPlayer(){
+        SetPhysicsProcess(true);
+        PlayerAnimatedSprite.Play();
+        PlayerScore = 0;
     }
 }
