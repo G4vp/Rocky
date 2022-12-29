@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Rocky : KinematicBody2D
+public class Player : KinematicBody2D
 {
     private int Jump = -470;
     private bool Jumped = false;

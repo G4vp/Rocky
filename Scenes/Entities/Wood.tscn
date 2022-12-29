@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/Obstacles.cs" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 6 )
+extents = Vector2( 13, 6 )
 
 [node name="Wood" type="KinematicBody2D"]
 collision_layer = 4
