@@ -34,7 +34,11 @@ public class Player : KinematicBody2D
     }
 
     public void PlayerCollidesBody(PhysicsBody2D body){
-        GameOver = true;
+
+        // If player collides with obstacles
+        if(body.CollisionLayer == 4){
+            GameOver = true;
+        }
     }
 
     // If the player collides with a collectable ( Orange Ball ) it destroy it and increases the score

@@ -15,7 +15,6 @@ public class ScoreSystem : Node2D
     public override void _Process(float delta)
     {
         ScoreLabelUpdate();
-        GD.Print(PlayerNode.PlayerScore);
     }
 
     public void ScoreLabelUpdate(){
