@@ -4,6 +4,7 @@ using System;
 public class GameState : Node2D
 {   
     public Player PlayerNode;
+    
     public override void _Ready()
     {
         PlayerNode = GetNode<Player>("Player");
@@ -17,5 +18,6 @@ public class GameState : Node2D
     }
     public void GameOver(){
         PlayerNode.StopPlayer();
+
     }
 }

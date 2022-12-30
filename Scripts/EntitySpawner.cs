@@ -9,6 +9,8 @@ public class EntitySpawner : Node2D
     PackedScene OrangeBallScene;
 
     Timer ObstacleTimer;
+    Timer CollectableTimer;
+
     RandomNumberGenerator rng = new RandomNumberGenerator();
     public override void _Ready()
     {
@@ -20,6 +22,8 @@ public class EntitySpawner : Node2D
         OrangeBallScene = GD.Load<PackedScene>("res://Scenes/Entities/OrangeBall.tscn");
 
         ObstacleTimer = GetNode<Timer>("ObstaclesTimer");
+        CollectableTimer = GetNode<Timer>("CollectableTimer");
+        
     }
 
     public void OnTimerObstacles(){
@@ -55,5 +59,15 @@ public class EntitySpawner : Node2D
     public void CollectableSpawn(){
         var OrangeBallInstance = OrangeBallScene.Instance();
         AddChild(OrangeBallInstance);
+    }
+
+    public void StopSpawn(){
+        ObstacleTimer.Stop();
+        CollectableTimer.Stop();
+    }
+
+    public void ResetSpawn(){
+        ObstacleTimer.Start();
+        CollectableTimer.Start();
     }
 }
