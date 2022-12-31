@@ -18,7 +18,7 @@ public class GameStateLabel : Node2D
         LabelParentNode.Show();
         LabelNode.Text = "Press \"Space\" To Restart";
         AnimationLabelNode.Play("HeartBeat");
-        Position = new Vector2 (Position.x,5);
+        Position = new Vector2 (-11,Position.y);
     }
 
     public void HideLabel(){

@@ -30,7 +30,6 @@ public class ScoreLabel : Node2D
     public void ScoreLabelGameOver(){
         if(!GameOverAnimationHasPlayed){
             AnimationScoreLabel.Play("GameOver");
-            AnimationLabelParent.Play("HeartBeat");
             SetProcess(false);
             GameOverAnimationHasPlayed = true;
         }
@@ -47,7 +46,6 @@ public class ScoreLabel : Node2D
     public void ResetScoreLabel(){
         LabelNode.Text = "Score: 0";
         AnimationScoreLabel.Play("Reset");
-        AnimationLabelParent.Stop();
 
         SetProcess(true);
     }
