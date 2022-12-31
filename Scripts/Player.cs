@@ -9,11 +9,11 @@ public class Player : KinematicBody2D
     private Vector2 _velocity = new Vector2();
     public int PlayerScore = 0;
     public bool GameOver = false;
-
     AnimatedSprite PlayerAnimatedSprite;
     public override void _Ready()
     {
         PlayerAnimatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+        SetPhysicsProcess(false);
     }
 
     public override void _PhysicsProcess(float delta)

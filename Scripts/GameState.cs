@@ -46,6 +46,8 @@ public class GameState : Node2D
     public void GameStarted(){
         ScoreLabelNode.Show();
         GameStateLabelNode.HideLabel();
+        
+        PlayerNode.ResetPlayer();
     }
 
     public void GetInput(){
