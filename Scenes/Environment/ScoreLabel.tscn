@@ -1,13 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/ScoreLabel.cs" type="Script" id=1]
 
-[sub_resource type="DynamicFontData" id=1]
+[sub_resource type="DynamicFontData" id=9]
 font_path = "res://Assets/pentapixel/Pentapixel.ttf"
 
 [sub_resource type="DynamicFont" id=2]
 size = 32
-font_data = SubResource( 1 )
+font_data = SubResource( 9 )
 
 [sub_resource type="Animation" id=5]
 resource_name = "HeartBeat"
@@ -109,7 +109,22 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 80, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 72, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -146,8 +161,6 @@ position = Vector2( 48, 8 )
 script = ExtResource( 1 )
 
 [node name="LabelParent" type="Node2D" parent="."]
-position = Vector2( 0, -1 )
-scale = Vector2( 1.1, 1.1 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -176,4 +189,5 @@ anims/RESET = SubResource( 6 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../LabelParent/Label")
 anims/GameOver = SubResource( 3 )
+anims/RESET = SubResource( 8 )
 anims/UpdateScore = SubResource( 7 )
