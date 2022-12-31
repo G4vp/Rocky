@@ -15,12 +15,14 @@ public class GameStateLabel : Node2D
     }
 
     public void LabelToRestart(){
+        LabelParentNode.Show();
         LabelNode.Text = "Press \"Space\" To Restart";
         AnimationLabelNode.Play("HeartBeat");
         Position = new Vector2 (Position.x,5);
     }
 
-    public void HideRestartLabel(){
-
+    public void HideLabel(){
+        LabelParentNode.Hide();
+        AnimationLabelNode.Stop();
     }
 }
