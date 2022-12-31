@@ -60,7 +60,8 @@ script = ExtResource( 2 )
 position = Vector2( 128, 184 )
 frames = SubResource( 10 )
 animation = "SandMoving"
-frame = 3
+frame = 5
+speed_scale = 1.5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

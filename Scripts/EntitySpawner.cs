@@ -18,7 +18,6 @@ public class EntitySpawner : Node2D
         WoodScene = GD.Load<PackedScene>("res://Scenes/Entities/Wood.tscn");
         RocksScene = GD.Load<PackedScene>("res://Scenes/Entities/Rocks.tscn");
         ParrotScene = GD.Load<PackedScene>("res://Scenes/Entities/Parrot.tscn");
-
         OrangeBallScene = GD.Load<PackedScene>("res://Scenes/Entities/OrangeBall.tscn");
 
         ObstacleTimer = GetNode<Timer>("ObstaclesTimer");
@@ -53,7 +52,6 @@ public class EntitySpawner : Node2D
                 AddChild(ParrotInstance);
                 break;
         }
-        GD.Print(MyRandomNumber);
     }   
 
     public void CollectableSpawn(){
