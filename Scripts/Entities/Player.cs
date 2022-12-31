@@ -10,10 +10,16 @@ public class Player : KinematicBody2D
     public int PlayerScore = 0;
     public bool IsGameOver = false;
 
-    AnimatedSprite PlayerAnimatedSprite;
+    public AnimatedSprite PlayerAnimatedSprite;
+
+    public Particles2D ParticlesExplosion;
+
+    public CollisionShape2D PhysicsCollider;
     public override void _Ready()
     {
         PlayerAnimatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+        PhysicsCollider = GetNode<CollisionShape2D>("PhysicsCollider");
+        ParticlesExplosion = GetNode<Particles2D>("Particles/ParticlesExplosion");
     }
 
     public override void _PhysicsProcess(float delta)
@@ -34,9 +40,9 @@ public class Player : KinematicBody2D
     }
 
     public void PlayerCollidesBody(PhysicsBody2D body){
-
         // If player collides with obstacles
-        if(body.CollisionLayer == 4){
+        if(body.CollisionLayer == 4 && !IsGameOver){
+            PlayerExplosion();
             IsGameOver = true;
         }
     }
@@ -56,8 +62,16 @@ public class Player : KinematicBody2D
     
     public void ResetPlayer(){
         SetPhysicsProcess(true);
+        PlayerAnimatedSprite.Show();
         PlayerAnimatedSprite.Play();
+        PhysicsCollider.Disabled = false;
         PlayerScore = 0;
         IsGameOver = false;   
+    }
+
+    public void PlayerExplosion(){
+        PlayerAnimatedSprite.Hide();
+        PhysicsCollider.Disabled = true;
+        ParticlesExplosion.Emitting = true;;
     }
 }

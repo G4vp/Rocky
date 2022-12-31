@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Rocky.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Entities/Player.cs" type="Script" id=2]
+[ext_resource path="res://Scenes/Particles/ParticlesExplosion.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11, 7 )
@@ -25,7 +26,7 @@ animations = [ {
 collision_mask = 277
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PhysicsCollider" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="PlayerArea2D" type="Area2D" parent="."]
@@ -36,6 +37,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
+
+[node name="Particles" type="Node2D" parent="."]
+
+[node name="ParticlesExplosion" parent="Particles" instance=ExtResource( 3 )]
 
 [connection signal="area_entered" from="PlayerArea2D" to="." method="PlayerCollidesArea"]
 [connection signal="body_entered" from="PlayerArea2D" to="." method="PlayerCollidesBody"]

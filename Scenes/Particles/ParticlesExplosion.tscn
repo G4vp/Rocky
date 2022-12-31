@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/CubeParticle.png" type="Texture" id=1]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.00645161, 0.587097, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.697266, 0.0762634, 0.0762634, 1, 0.790863, 0.411106, 0.106075, 1, 0.857422, 0.649216, 0.127274, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.640449, 0.893182 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 18.0
+initial_velocity_random = 0.25
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping_curve = SubResource( 4 )
+scale = 1.5
+scale_random = 0.32
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 2 )
+
+[node name="ParticlesExplosion" type="Particles2D"]
+emitting = false
+amount = 16
+lifetime = 2.0
+one_shot = true
+speed_scale = 4.0
+explosiveness = 0.95
+process_material = SubResource( 7 )
+texture = ExtResource( 1 )
