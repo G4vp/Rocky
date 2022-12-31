@@ -8,7 +8,7 @@ public class Player : KinematicBody2D
     private int Gravity = 1400;
     private Vector2 _velocity = new Vector2();
     public int PlayerScore = 0;
-    public bool GameOver = false;
+    public bool IsGameOver = false;
 
     AnimatedSprite PlayerAnimatedSprite;
     public override void _Ready()
@@ -37,7 +37,7 @@ public class Player : KinematicBody2D
 
         // If player collides with obstacles
         if(body.CollisionLayer == 4){
-            GameOver = true;
+            IsGameOver = true;
         }
     }
 
@@ -58,5 +58,6 @@ public class Player : KinematicBody2D
         SetPhysicsProcess(true);
         PlayerAnimatedSprite.Play();
         PlayerScore = 0;
+        IsGameOver = false;   
     }
 }

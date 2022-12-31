@@ -45,8 +45,9 @@ public class ScoreLabel : Node2D
 
     public void ResetScoreLabel(){
         LabelNode.Text = "Score: 0";
-        AnimationScoreLabel.Play("Reset");
-
+        LastScore = 0;
+        GameOverAnimationHasPlayed = false;
+        AnimationScoreLabel.PlayBackwards("GameOver");
         SetProcess(true);
     }
 }

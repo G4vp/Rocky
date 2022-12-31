@@ -10,6 +10,7 @@ public class GameState : Node2D
 
     public GameStateLabel GameStateLabelNode;
 
+    bool isGameRunning = false;
     bool isGameStarted = false;
     
     public override void _Ready()
@@ -20,7 +21,8 @@ public class GameState : Node2D
         ScoreLabelNode = GetNode<ScoreLabel>("ScoreLabel");
         GameStateLabelNode = GetNode<GameStateLabel>("GameStateLabel");
         
-        ScoreLabelNode.Hide();
+
+        PlayerNode.StopPlayer();
     }
 
     public override void _Process(float delta)
@@ -30,9 +32,11 @@ public class GameState : Node2D
         if(isGameStarted){
             GameStarted();
         }
-        if(PlayerNode.GameOver){
+        if(PlayerNode.IsGameOver){
             GameOver();
         }
+
+        GD.Print(EntitySpawnerNode.GetChildCount());
     }
     public void GameOver(){
         PlayerNode.StopPlayer();
@@ -40,19 +44,28 @@ public class GameState : Node2D
         ScoreLabelNode.ScoreLabelGameOver();
         GameStateLabelNode.LabelToRestart();
 
+
+        isGameRunning = false;
         isGameStarted = false;
+
     }
 
     public void GameStarted(){
         ScoreLabelNode.Show();
         GameStateLabelNode.HideLabel();
-        
+
         PlayerNode.ResetPlayer();
+        EntitySpawnerNode.ResetSpawn();
+        ScoreLabelNode.ResetScoreLabel();
+
+        isGameStarted = false;
+
     }
 
     public void GetInput(){
-        if(Input.IsActionJustPressed("ui_accept")){
+        if(Input.IsActionJustPressed("ui_accept") && !isGameRunning ){
             isGameStarted = true;
+            isGameRunning = true;
         }
     }
 }

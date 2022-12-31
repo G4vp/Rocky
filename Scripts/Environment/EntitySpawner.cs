@@ -11,6 +11,7 @@ public class EntitySpawner : Node2D
     Timer ObstacleTimer;
     Timer CollectableTimer;
 
+    Node2D Entities;
     RandomNumberGenerator rng = new RandomNumberGenerator();
     public override void _Ready()
     {
@@ -22,6 +23,7 @@ public class EntitySpawner : Node2D
 
         ObstacleTimer = GetNode<Timer>("ObstaclesTimer");
         CollectableTimer = GetNode<Timer>("CollectableTimer");
+        Entities = GetNode<Node2D>("Entities");
         
     }
 
@@ -41,22 +43,22 @@ public class EntitySpawner : Node2D
         switch(MyRandomNumber){
             case 0:
                 var WoodInstance = WoodScene.Instance();
-                AddChild(WoodInstance);
+                Entities.AddChild(WoodInstance);
                 break;
             case 1:
                 var RocksInstance = RocksScene.Instance();
-                AddChild(RocksInstance);
+                Entities.AddChild(RocksInstance);
                 break;
             case 2:
                 var ParrotInstance = ParrotScene.Instance();
-                AddChild(ParrotInstance);
+                Entities.AddChild(ParrotInstance);
                 break;
         }
     }   
 
     public void CollectableSpawn(){
         var OrangeBallInstance = OrangeBallScene.Instance();
-        AddChild(OrangeBallInstance);
+        Entities.AddChild(OrangeBallInstance);
     }
 
     public void StopSpawn(){
@@ -65,7 +67,16 @@ public class EntitySpawner : Node2D
     }
 
     public void ResetSpawn(){
-        ObstacleTimer.Start();
-        CollectableTimer.Start();
+
+        ObstacleTimer.Start(3);
+        CollectableTimer.Start(1.8f);
+
+        DestroyAllChildrens();
+    }
+
+    public void DestroyAllChildrens(){
+        for(int i = 0; i < Entities.GetChildCount(); i++){
+            Entities.GetChild(i).QueueFree();
+        }
     }
 }

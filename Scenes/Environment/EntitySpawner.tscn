@@ -10,11 +10,11 @@ __meta__ = {
 
 [node name="ObstaclesTimer" type="Timer" parent="."]
 wait_time = 3.0
-autostart = true
 
 [node name="CollectableTimer" type="Timer" parent="."]
 wait_time = 1.8
-autostart = true
+
+[node name="Entities" type="Node2D" parent="."]
 
 [connection signal="timeout" from="ObstaclesTimer" to="." method="OnTimerObstacles"]
 [connection signal="timeout" from="CollectableTimer" to="." method="OnTimerCollectables"]

@@ -24,5 +24,6 @@ position = Vector2( -32, 136 )
 position = Vector2( 280, 96 )
 
 [node name="ScoreLabel" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [node name="GameStateLabel" parent="." instance=ExtResource( 7 )]
