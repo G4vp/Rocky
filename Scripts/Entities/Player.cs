@@ -14,11 +14,11 @@ public class Player : KinematicBody2D
 
     public Particles2D ParticlesExplosion;
 
-    public CollisionShape2D PhysicsCollider;
+    public Area2D Area;
     public override void _Ready()
     {
         PlayerAnimatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
-        PhysicsCollider = GetNode<CollisionShape2D>("PhysicsCollider");
+        Area = GetNode<Area2D>("PlayerArea2D");
         ParticlesExplosion = GetNode<Particles2D>("Particles/ParticlesExplosion");
     }
 
@@ -64,14 +64,15 @@ public class Player : KinematicBody2D
         SetPhysicsProcess(true);
         PlayerAnimatedSprite.Show();
         PlayerAnimatedSprite.Play();
-        PhysicsCollider.Disabled = false;
         PlayerScore = 0;
         IsGameOver = false;   
+        Area.SetCollisionMaskBit(4,true);  //Enable collision with ball
     }
+
 
     public void PlayerExplosion(){
         PlayerAnimatedSprite.Hide();
-        PhysicsCollider.Disabled = true;
-        ParticlesExplosion.Emitting = true;;
+        ParticlesExplosion.Emitting = true;
+        Area.SetCollisionMaskBit(4,false); //Disable Collision with ball
     }
 }
