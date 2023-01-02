@@ -4,7 +4,7 @@ using System;
 public class EntitySpawner : Node2D
 {   
     PackedScene WoodScene;
-    PackedScene RocksScene;
+    PackedScene CrabScene;
     PackedScene ParrotScene;
     PackedScene OrangeBallScene;
 
@@ -17,7 +17,7 @@ public class EntitySpawner : Node2D
     {
         rng.Randomize();
         WoodScene = GD.Load<PackedScene>("res://Scenes/Entities/Wood.tscn");
-        RocksScene = GD.Load<PackedScene>("res://Scenes/Entities/Rocks.tscn");
+        CrabScene = GD.Load<PackedScene>("res://Scenes/Entities/Crab.tscn");
         ParrotScene = GD.Load<PackedScene>("res://Scenes/Entities/Parrot.tscn");
         OrangeBallScene = GD.Load<PackedScene>("res://Scenes/Entities/OrangeBall.tscn");
 
@@ -46,8 +46,8 @@ public class EntitySpawner : Node2D
                 Entities.AddChild(WoodInstance);
                 break;
             case 1:
-                var RocksInstance = RocksScene.Instance();
-                Entities.AddChild(RocksInstance);
+                var CrabInstance = CrabScene.Instance();
+                Entities.AddChild(CrabInstance);
                 break;
             case 2:
                 var ParrotInstance = ParrotScene.Instance();
