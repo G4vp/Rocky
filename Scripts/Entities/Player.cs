@@ -68,8 +68,8 @@ public class Player : KinematicBody2D
         IsGameOver = false;   
         Area.SetCollisionMaskBit(4,true);  //Enable collision with ball
     }
-
-
+    
+    // PlayerExplosion Function calls 'explosion' particles after the player collides with a physicsbody2D
     public void PlayerExplosion(){
         PlayerAnimatedSprite.Hide();
         ParticlesExplosion.Emitting = true;

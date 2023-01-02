@@ -19,7 +19,7 @@ public class OrangeBall : RigidBody2D
         AppliedForce = _velocity;
     }
 
-    // Function that moves the node in a vertical random position ( -30 <= y <= 40,  from parent node)
+    // Function that moves the node in a vertical random position ( -40 <= y <= 0,  from parent node)
     public void VerticalRandomPosition(int y){
         Position = new Vector2(Position.x,y);
     }

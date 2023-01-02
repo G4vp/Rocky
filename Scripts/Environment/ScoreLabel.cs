@@ -14,14 +14,9 @@ public class ScoreLabel : Node2D
     {
         PlayerNode = GetParent().GetNode<Player>("Player");
         LabelNode = GetNode<Label>("LabelParent/Label");
-
         AnimationScoreLabel = GetNode<AnimationPlayer>("AnimationPlayer");
         AnimationLabelParent = GetNode<AnimationPlayer>("LabelParent/AnimationPlayer");
-
-
     }
-
- // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta)
     {
         ScoreLabelUpdate();
