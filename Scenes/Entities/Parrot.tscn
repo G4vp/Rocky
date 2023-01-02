@@ -23,7 +23,7 @@ animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "default",
-"speed": 8.0
+"speed": 6.0
 } ]
 
 [node name="Parrot" type="KinematicBody2D"]
@@ -37,7 +37,7 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true

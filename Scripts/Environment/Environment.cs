@@ -9,7 +9,7 @@ public class Environment : Node2D
 
     public override void _Ready()
     {
-        FloorAnimation = GetNode<AnimatedSprite>("AnimatedSprite");
+        FloorAnimation = GetNode<AnimatedSprite>("Floor");
     }
 
     public void StopEnvironment(){

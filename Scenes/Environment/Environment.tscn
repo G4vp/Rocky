@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=23 format=2]
 
+[ext_resource path="res://Assets/BackgroundSpriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Environment/Environment.cs" type="Script" id=2]
 [ext_resource path="res://Assets/SandSpriteSheet.png" type="Texture" id=3]
 
@@ -51,19 +52,67 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 184, 40 )
 
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 256, 224 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 256, 0, 256, 224 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 512, 0, 256, 224 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 768, 0, 256, 224 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 1024, 0, 256, 224 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 1 )
+region = Rect2( 1280, 0, 256, 224 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 1536, 0, 256, 224 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 1 )
+region = Rect2( 1792, 0, 256, 224 )
+
+[sub_resource type="SpriteFrames" id=20]
+animations = [ {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
 [node name="Environment" type="StaticBody2D"]
 collision_layer = 256
 collision_mask = 256
 script = ExtResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="Floor" type="AnimatedSprite" parent="."]
 position = Vector2( 128, 184 )
 frames = SubResource( 10 )
 animation = "SandMoving"
-frame = 7
-speed_scale = 1.5
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 136, 184 )
 shape = SubResource( 11 )
+
+[node name="Background" type="AnimatedSprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.537255 )
+show_behind_parent = true
+position = Vector2( 128, 112 )
+frames = SubResource( 20 )
+frame = 7
+speed_scale = 0.08
+playing = true
