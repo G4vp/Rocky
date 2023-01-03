@@ -9,7 +9,6 @@ public class Player : KinematicBody2D
     private Vector2 _velocity = new Vector2();
     public int PlayerScore = 0;
     public bool IsGameOver = false;
-
     public AnimatedSprite PlayerAnimatedSprite;
 
     public Particles2D ParticlesExplosion;
@@ -31,7 +30,20 @@ public class Player : KinematicBody2D
             _velocity.y += Jump;
             Jumped = false;
         }
+
+        if(IsOnFloor()){
+            PlayerAnimatedSprite.Play("Running");
+        }
+        else{
+            PlayerAnimatedSprite.Play("Jumping"); 
+        }
+    
         _velocity = MoveAndSlide(_velocity,Vector2.Up);
+    }
+    public void CheckJumpEnded(){
+        if(PlayerAnimatedSprite.Animation == "Jumping"){
+            PlayerAnimatedSprite.Play("Running");
+        }
     }
     public void GetInput(){
         if(Input.IsActionPressed("jump") && IsOnFloor()){
@@ -63,7 +75,7 @@ public class Player : KinematicBody2D
     public void ResetPlayer(){
         SetPhysicsProcess(true);
         PlayerAnimatedSprite.Show();
-        PlayerAnimatedSprite.Play();
+        PlayerAnimatedSprite.Play("default");
         PlayerScore = 0;
         IsGameOver = false;   
         Area.SetCollisionMaskBit(4,true);  //Enable collision with ball

@@ -23,6 +23,7 @@ public class GameState : Node2D
         
 
         PlayerNode.StopPlayer();
+        EnvironmentNode.StopEnvironment();
     }
 
     public override void _Process(float delta)
@@ -47,23 +48,22 @@ public class GameState : Node2D
 
         isGameRunning = false;
         isGameStarted = false;
-
     }
 
     public void GameStarted(){
         ScoreLabelNode.Show();
         GameStateLabelNode.HideLabel();
-
+        
         PlayerNode.ResetPlayer();
         EntitySpawnerNode.ResetSpawn();
         ScoreLabelNode.ResetScoreLabel();
-
+        EnvironmentNode.ResetEnvironment();
         isGameStarted = false;
 
     }
 
     public void GetInput(){
-        if(Input.IsActionJustPressed("ui_accept") && !isGameRunning ){
+        if(Input.IsActionJustPressed("jump") && !isGameRunning ){
             isGameStarted = true;
             isGameRunning = true;
         }
