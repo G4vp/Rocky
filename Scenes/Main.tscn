@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Environment/Environment.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Entities/Player.tscn" type="PackedScene" id=2]
@@ -7,9 +7,6 @@
 [ext_resource path="res://Scripts/GameState.cs" type="Script" id=5]
 [ext_resource path="res://Scenes/Environment/ScoreLabel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Environment/GameStateLabel.tscn" type="PackedScene" id=7]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 128, 112 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 5 )
@@ -30,7 +27,3 @@ position = Vector2( 280, 96 )
 visible = false
 
 [node name="GameStateLabel" parent="." instance=ExtResource( 7 )]
-
-[node name="TouchScreenButtonLeft" type="TouchScreenButton" parent="."]
-shape = SubResource( 1 )
-action = "Left"

@@ -40,11 +40,6 @@ public class Player : KinematicBody2D
     
         _velocity = MoveAndSlide(_velocity,Vector2.Up);
     }
-    public void CheckJumpEnded(){
-        if(PlayerAnimatedSprite.Animation == "Jumping"){
-            PlayerAnimatedSprite.Play("Running");
-        }
-    }
     public void GetInput(){
         if(Input.IsActionPressed("jump") && IsOnFloor()){
             Jumped = true;           

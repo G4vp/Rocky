@@ -36,8 +36,6 @@ public class GameState : Node2D
         if(PlayerNode.IsGameOver){
             GameOver();
         }
-
-        GD.Print(EntitySpawnerNode.GetChildCount());
     }
     public void GameOver(){
         PlayerNode.StopPlayer();
