@@ -10,9 +10,7 @@ public class Player : KinematicBody2D
     public int PlayerScore = 0;
     public bool IsGameOver = false;
     public AnimatedSprite PlayerAnimatedSprite;
-
     public Particles2D ParticlesExplosion;
-
     public Area2D Area;
     public override void _Ready()
     {
@@ -48,9 +46,12 @@ public class Player : KinematicBody2D
 
     public void PlayerCollidesBody(PhysicsBody2D body){
         // If player collides with obstacles
-        if(body.CollisionLayer == 4 && !IsGameOver){
-            PlayerExplosion();
-            IsGameOver = true;
+        if(body.CollisionLayer == 4){
+            if(!IsGameOver){
+                PlayerExplosion();
+                IsGameOver = true;
+            }
+            body.SetCollisionMaskBit(0,false); // PhysicsBody2D's CollisionMask Layer 1 disabled 
         }
     }
 
@@ -73,6 +74,7 @@ public class Player : KinematicBody2D
         PlayerAnimatedSprite.Play("default");
         PlayerScore = 0;
         IsGameOver = false;   
+        this.SetCollisionMaskBit(2,true);  // Player's CollisionMask Layer 3 enabled
         Area.SetCollisionMaskBit(4,true);  //Enable collision with ball
     }
     
@@ -80,6 +82,7 @@ public class Player : KinematicBody2D
     public void PlayerExplosion(){
         PlayerAnimatedSprite.Hide();
         ParticlesExplosion.Emitting = true;
-        Area.SetCollisionMaskBit(4,false); //Disable Collision with ball
+        this.SetCollisionMaskBit(2,false); // Player's CollisionMask Layer 3 disabled 
+        Area.SetCollisionMaskBit(4,false); // Disable CollisionMask with ball
     }
 }

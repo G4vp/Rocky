@@ -21,7 +21,6 @@ public class GameState : Node2D
         ScoreLabelNode = GetNode<ScoreLabel>("ScoreLabel");
         GameStateLabelNode = GetNode<GameStateLabel>("GameStateLabel");
         
-
         PlayerNode.StopPlayer();
         EnvironmentNode.StopEnvironment();
     }
