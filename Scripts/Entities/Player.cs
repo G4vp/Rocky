@@ -44,22 +44,17 @@ public class Player : KinematicBody2D
         }
     }
 
-    public void PlayerCollidesBody(PhysicsBody2D body){
-        // If player collides with obstacles
-        if(body.CollisionLayer == 4){
-            if(!IsGameOver){
-                PlayerExplosion();
-                IsGameOver = true;
-            }
-            body.SetCollisionMaskBit(0,false); // PhysicsBody2D's CollisionMask Layer 1 disabled 
-        }
-    }
-
     // If the player collides with a collectable ( Orange Ball ) it destroy it and increases the score
     public void PlayerCollidesArea(Area2D area){
         if(area.Name == "OrangeBallArea2D"){
             area.GetParent().QueueFree();
             PlayerScore++;
+        }
+
+        // If player collides with obstacles
+        if(area.CollisionLayer == 4 && !IsGameOver){
+            PlayerExplosion();
+            IsGameOver = true;
         }
     }
 
@@ -74,7 +69,6 @@ public class Player : KinematicBody2D
         PlayerAnimatedSprite.Play("default");
         PlayerScore = 0;
         IsGameOver = false;   
-        this.SetCollisionMaskBit(2,true);  // Player's CollisionMask Layer 3 enabled
         Area.SetCollisionMaskBit(4,true);  //Enable collision with ball
     }
     
@@ -82,7 +76,6 @@ public class Player : KinematicBody2D
     public void PlayerExplosion(){
         PlayerAnimatedSprite.Hide();
         ParticlesExplosion.Emitting = true;
-        this.SetCollisionMaskBit(2,false); // Player's CollisionMask Layer 3 disabled 
         Area.SetCollisionMaskBit(4,false); // Disable CollisionMask with ball
     }
 }
