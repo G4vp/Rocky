@@ -1,8 +1,0 @@
-/home/gviera/Dev/RockyStoleChristmas/.mono/temp/bin/ExportRelease/Rocky Stole Christmas.dll
-/home/gviera/Dev/RockyStoleChristmas/.mono/temp/bin/ExportRelease/Rocky Stole Christmas.pdb
-/home/gviera/Dev/RockyStoleChristmas/.mono/temp/obj/ExportRelease/Rocky Stole Christmas.csprojAssemblyReference.cache
-/home/gviera/Dev/RockyStoleChristmas/.mono/temp/obj/ExportRelease/Rocky Stole Christmas.AssemblyInfoInputs.cache
-/home/gviera/Dev/RockyStoleChristmas/.mono/temp/obj/ExportRelease/Rocky Stole Christmas.AssemblyInfo.cs
-/home/gviera/Dev/RockyStoleChristmas/.mono/temp/obj/ExportRelease/Rocky Stole Christmas.csproj.CoreCompileInputs.cache
-/home/gviera/Dev/RockyStoleChristmas/.mono/temp/obj/ExportRelease/Rocky Stole Christmas.dll
-/home/gviera/Dev/RockyStoleChristmas/.mono/temp/obj/ExportRelease/Rocky Stole Christmas.pdb
