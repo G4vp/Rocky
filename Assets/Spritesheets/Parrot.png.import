@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SandTileMap.png-214f753edc94cd5f6c17cb1695d09fbc.stex"
+path="res://.import/Parrot.png-6e1db220db7e501c2ca7fad175965e6a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SandTileMap.png"
-dest_files=[ "res://.import/SandTileMap.png-214f753edc94cd5f6c17cb1695d09fbc.stex" ]
+source_file="res://Assets/Spritesheets/Parrot.png"
+dest_files=[ "res://.import/Parrot.png-6e1db220db7e501c2ca7fad175965e6a.stex" ]
 
 [params]
 

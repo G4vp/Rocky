@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BackgroundSpriteSheet.png-31176cae9dde387180964197656b4609.stex"
+path="res://.import/CubeParticle.png-932c4015afda67f3c130eb4dfdb32149.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BackgroundSpriteSheet.png"
-dest_files=[ "res://.import/BackgroundSpriteSheet.png-31176cae9dde387180964197656b4609.stex" ]
+source_file="res://Assets/Spritesheets/CubeParticle.png"
+dest_files=[ "res://.import/CubeParticle.png-932c4015afda67f3c130eb4dfdb32149.stex" ]
 
 [params]
 

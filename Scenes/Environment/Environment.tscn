@@ -1,8 +1,8 @@
 [gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://Assets/BackgroundSpriteSheet.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Spritesheets/BackgroundSpriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Environment/Environment.cs" type="Script" id=2]
-[ext_resource path="res://Assets/SandSpriteSheet.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Spritesheets/SandSpriteSheet.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 3 )

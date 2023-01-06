@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/WoodsSprite.png-846dbd55ae07cccb38e160edbd3a9628.stex"
+path="res://.import/Crab.png-379448160966bb80aaf18fe60e7ebab9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/WoodsSprite.png"
-dest_files=[ "res://.import/WoodsSprite.png-846dbd55ae07cccb38e160edbd3a9628.stex" ]
+source_file="res://Assets/Spritesheets/Crab.png"
+dest_files=[ "res://.import/Crab.png-379448160966bb80aaf18fe60e7ebab9.stex" ]
 
 [params]
 

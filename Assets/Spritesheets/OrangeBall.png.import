@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/FullScenario.png-3c88e052c7e063eaab2069a3e302138d.stex"
+path="res://.import/OrangeBall.png-6089c7e1e2235c19c0d3747eb951594b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FullScenario.png"
-dest_files=[ "res://.import/FullScenario.png-3c88e052c7e063eaab2069a3e302138d.stex" ]
+source_file="res://Assets/Spritesheets/OrangeBall.png"
+dest_files=[ "res://.import/OrangeBall.png-6089c7e1e2235c19c0d3747eb951594b.stex" ]
 
 [params]
 
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

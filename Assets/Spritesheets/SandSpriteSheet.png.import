@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RockyRunning.png-3294b8de99bb84f9f395668a2fe59e1f.stex"
+path="res://.import/SandSpriteSheet.png-8616325bbd98d8e684bf7dfe0631be0c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/RockyRunning.png"
-dest_files=[ "res://.import/RockyRunning.png-3294b8de99bb84f9f395668a2fe59e1f.stex" ]
+source_file="res://Assets/Spritesheets/SandSpriteSheet.png"
+dest_files=[ "res://.import/SandSpriteSheet.png-8616325bbd98d8e684bf7dfe0631be0c.stex" ]
 
 [params]
 

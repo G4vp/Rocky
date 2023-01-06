@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Parrot.png-c866a82971ae3075b5764feb649854bb.stex"
+path="res://.import/BackgroundSpriteSheet.png-1c91844efdca8bc5ed413e0745b916da.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Parrot.png"
-dest_files=[ "res://.import/Parrot.png-c866a82971ae3075b5764feb649854bb.stex" ]
+source_file="res://Assets/Spritesheets/BackgroundSpriteSheet.png"
+dest_files=[ "res://.import/BackgroundSpriteSheet.png-1c91844efdca8bc5ed413e0745b916da.stex" ]
 
 [params]
 

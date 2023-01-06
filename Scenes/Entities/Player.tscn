@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Assets/Rocky.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Spritesheets/Rocky.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Entities/Player.cs" type="Script" id=2]
 [ext_resource path="res://Scenes/Particles/ParticlesExplosion.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/RockyRunning.png" type="Texture" id=4]
-[ext_resource path="res://Assets/RockyJumping.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Spritesheets/RockyRunning.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Spritesheets/RockyJumping.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11, 7 )

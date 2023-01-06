@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Crab.png-d3364c5fab28aabd2beee0cddb0e4bd6.stex"
+path="res://.import/RocksSprites.png-6de830a10dc414daf102bcae9c372084.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Crab.png"
-dest_files=[ "res://.import/Crab.png-d3364c5fab28aabd2beee0cddb0e4bd6.stex" ]
+source_file="res://Assets/Spritesheets/RocksSprites.png"
+dest_files=[ "res://.import/RocksSprites.png-6de830a10dc414daf102bcae9c372084.stex" ]
 
 [params]
 

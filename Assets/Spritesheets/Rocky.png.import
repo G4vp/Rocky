@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RockyJumping.png-5e2b2b8d28d95a154a0231e333d4793d.stex"
+path="res://.import/Rocky.png-406ca872ff3bf05b5a677460823221d2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/RockyJumping.png"
-dest_files=[ "res://.import/RockyJumping.png-5e2b2b8d28d95a154a0231e333d4793d.stex" ]
+source_file="res://Assets/Spritesheets/Rocky.png"
+dest_files=[ "res://.import/Rocky.png-406ca872ff3bf05b5a677460823221d2.stex" ]
 
 [params]
 

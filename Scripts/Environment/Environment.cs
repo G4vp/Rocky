@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class Environment : Node2D
 {
-
     AnimatedSprite FloorAnimation;
     AnimatedSprite BackgroundAnimation;
 

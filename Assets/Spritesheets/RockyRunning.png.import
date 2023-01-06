@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/OrangeBall.png-e8dd1a94cf328a330b2c1eec5f0d3cb3.stex"
+path="res://.import/RockyRunning.png-f49be16d216d1cc852f1847cab5c91b5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/OrangeBall.png"
-dest_files=[ "res://.import/OrangeBall.png-e8dd1a94cf328a330b2c1eec5f0d3cb3.stex" ]
+source_file="res://Assets/Spritesheets/RockyRunning.png"
+dest_files=[ "res://.import/RockyRunning.png-f49be16d216d1cc852f1847cab5c91b5.stex" ]
 
 [params]
 
