@@ -26,6 +26,7 @@ public class GameState : Node2D
 		PlayerNode.StopPlayer();
 		EnvironmentNode.StopEnvironment();
 
+		IntroSong.Play();
 	}
 
 	public override void _Process(float delta)
@@ -65,7 +66,7 @@ public class GameState : Node2D
 		ScoreLabelNode.ResetScoreLabel();
 		EnvironmentNode.ResetEnvironment();
 		WasGameStarted = false;
-		
+
 	}
 
 	public void GetInput(){

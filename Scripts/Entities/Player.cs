@@ -13,13 +13,15 @@ public class Player : KinematicBody2D
     public Particles2D ParticlesExplosion;
     public Area2D Area;
     AudioStreamPlayer2D PickUpSound;
+    AudioStreamPlayer2D ExplosionSound;
     public override void _Ready()
     {
         PlayerAnimatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
         Area = GetNode<Area2D>("PlayerArea2D");
         ParticlesExplosion = GetNode<Particles2D>("Particles/ParticlesExplosion");
-        PickUpSound = GetNode<AudioStreamPlayer2D>("Sounds/PickUpSound");
 
+        PickUpSound = GetNode<AudioStreamPlayer2D>("Sounds/PickUpSound");
+        ExplosionSound = GetNode<AudioStreamPlayer2D>("Sounds/ExplosionSound");
     }
 
     public override void _PhysicsProcess(float delta)
@@ -80,6 +82,7 @@ public class Player : KinematicBody2D
     public void PlayerExplosion(){
         PlayerAnimatedSprite.Hide();
         ParticlesExplosion.Emitting = true;
+        ExplosionSound.Play();
         Area.SetCollisionMaskBit(4,false); // Disable CollisionMask with ball
     }
 }
