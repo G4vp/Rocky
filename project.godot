@@ -50,7 +50,7 @@ pointing/emulate_touch_from_mouse=true
 
 [mono]
 
-project/assembly_name="Rocky Stole Christmas"
+project/assembly_name="Rocky"
 
 [physics]
 
