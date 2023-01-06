@@ -7,10 +7,8 @@ public class EntitySpawner : Node2D
     PackedScene CrabScene;
     PackedScene ParrotScene;
     PackedScene OrangeBallScene;
-
     Timer ObstacleTimer;
     Timer CollectableTimer;
-
     Node2D Entities;
     RandomNumberGenerator rng = new RandomNumberGenerator();
     public override void _Ready()

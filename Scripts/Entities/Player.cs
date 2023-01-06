@@ -49,7 +49,7 @@ public class Player : KinematicBody2D
         }
     }
 
-    // If the player collides with a collectable ( Orange Ball ) it destroy it and increases the score
+    // PlayerCollidesArea detects when and what the players collides.
     public void PlayerCollidesArea(Area2D area){
         if(area.Name == "OrangeBallArea2D"){
             area.GetParent<OrangeBall>().Destroy();
