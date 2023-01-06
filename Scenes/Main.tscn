@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Environment/Environment.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Entities/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Scripts/GameState.cs" type="Script" id=5]
 [ext_resource path="res://Scenes/Environment/ScoreLabel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Environment/GameStateLabel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Sounds/intro.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Sounds/runningSong.wav" type="AudioStream" id=9]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 5 )
@@ -27,3 +29,16 @@ position = Vector2( 280, 96 )
 visible = false
 
 [node name="GameStateLabel" parent="." instance=ExtResource( 7 )]
+
+[node name="Songs" type="Node2D" parent="."]
+position = Vector2( 128, 96 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="IntroSong" type="AudioStreamPlayer2D" parent="Songs"]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="RunningSong" type="AudioStreamPlayer2D" parent="Songs"]
+stream = ExtResource( 9 )

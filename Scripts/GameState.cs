@@ -7,11 +7,11 @@ public class GameState : Node2D
 	public EntitySpawner EntitySpawnerNode;
 	public Environment EnvironmentNode;
 	public ScoreLabel ScoreLabelNode;
-
 	public GameStateLabel GameStateLabelNode;
-
+	public AudioStreamPlayer2D IntroSong;
+	public AudioStreamPlayer2D RunningSong;
 	bool isGameRunning = false;
-	bool isGameStarted = false;
+	bool WasGameStarted = false;
 	
 	public override void _Ready()
 	{
@@ -20,48 +20,57 @@ public class GameState : Node2D
 		EnvironmentNode = GetNode<Environment>("Environment");
 		ScoreLabelNode = GetNode<ScoreLabel>("ScoreLabel");
 		GameStateLabelNode = GetNode<GameStateLabel>("GameStateLabel");
-		
+		IntroSong = GetNode<AudioStreamPlayer2D>("Songs/IntroSong");
+		RunningSong = GetNode<AudioStreamPlayer2D>("Songs/RunningSong");
+
 		PlayerNode.StopPlayer();
 		EnvironmentNode.StopEnvironment();
+
 	}
 
 	public override void _Process(float delta)
 	{   
 		GetInput();
 		
-		if(isGameStarted){
+		if(WasGameStarted){
 			GameStarted();
 		}
-		if(PlayerNode.IsGameOver){
+		if(PlayerNode.IsGameOver && isGameRunning){
 			GameOver();
 		}
 	}
 	public void GameOver(){
 		PlayerNode.StopPlayer();
+		
 		EntitySpawnerNode.StopSpawn();
 		ScoreLabelNode.ScoreLabelGameOver();
 		GameStateLabelNode.LabelToRestart();
 
+		RunningSong.Stop();
+		IntroSong.Play();
 
 		isGameRunning = false;
-		isGameStarted = false;
+		WasGameStarted = false;
 	}
 
 	public void GameStarted(){
 		ScoreLabelNode.Show();
 		GameStateLabelNode.HideLabel();
+
+		IntroSong.Stop();
+		RunningSong.Play();
 		
 		PlayerNode.ResetPlayer();
 		EntitySpawnerNode.ResetSpawn();
 		ScoreLabelNode.ResetScoreLabel();
 		EnvironmentNode.ResetEnvironment();
-		isGameStarted = false;
-
+		WasGameStarted = false;
+		
 	}
 
 	public void GetInput(){
 		if(Input.IsActionJustPressed("jump") && !isGameRunning ){
-			isGameStarted = true;
+			WasGameStarted = true;
 			isGameRunning = true;
 		}
 	}
