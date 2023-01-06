@@ -12,11 +12,14 @@ public class Player : KinematicBody2D
     public AnimatedSprite PlayerAnimatedSprite;
     public Particles2D ParticlesExplosion;
     public Area2D Area;
+    AudioStreamPlayer2D PickUpSound;
     public override void _Ready()
     {
         PlayerAnimatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
         Area = GetNode<Area2D>("PlayerArea2D");
         ParticlesExplosion = GetNode<Particles2D>("Particles/ParticlesExplosion");
+        PickUpSound = GetNode<AudioStreamPlayer2D>("Sounds/PickUpSound");
+
     }
 
     public override void _PhysicsProcess(float delta)
@@ -47,7 +50,8 @@ public class Player : KinematicBody2D
     // If the player collides with a collectable ( Orange Ball ) it destroy it and increases the score
     public void PlayerCollidesArea(Area2D area){
         if(area.Name == "OrangeBallArea2D"){
-            area.GetParent().QueueFree();
+            area.GetParent<OrangeBall>().Destroy();
+            PickUpSound.Play();
             PlayerScore++;
         }
 

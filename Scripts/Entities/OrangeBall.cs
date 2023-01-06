@@ -24,4 +24,8 @@ public class OrangeBall : RigidBody2D
         int RandomX = rng.RandiRange(-30,-15);
         AppliedForce = new Vector2(RandomX, 0);
     }
+
+    public void Destroy(){
+        this.QueueFree();
+    }
 }
