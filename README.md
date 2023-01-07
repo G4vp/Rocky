@@ -1,4 +1,4 @@
-# Rocky by Gabriel Viera
+# Rocky
 
 Rocky is a endless runner game developed using C# and Godot Engine.
 
@@ -14,3 +14,7 @@ Play as Rocky Bananas, a dachshund wearing a frog hoodie that is trying to survi
 This game was developed as a christmas gift for Rocky's owner.
 
 <img src="Assets/images/RockyPhoto.jpeg" width='25%'/>
+
+
+Game made by Gabriel Viera
+Music made by Sebastián Minondo
