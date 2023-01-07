@@ -11,6 +11,6 @@ Play as Rocky Bananas, a dachshund wearing a frog hoodie that is trying to survi
 
 # Game Background
 
-This game was developed as a christmas gift Rocky's owner.
+This game was developed as a christmas gift for Rocky's owner.
 
 <img src="Assets/images/RockyPhoto.jpeg" width='25%'/>
