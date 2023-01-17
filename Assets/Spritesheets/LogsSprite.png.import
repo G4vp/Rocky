@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/WoodsSprite.png-585fecc0262981ffadde6306f4f8e96b.stex"
+path="res://.import/LogsSprite.png-50827df04758806086a6b462b39989da.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Spritesheets/WoodsSprite.png"
-dest_files=[ "res://.import/WoodsSprite.png-585fecc0262981ffadde6306f4f8e96b.stex" ]
+source_file="res://Assets/Spritesheets/LogsSprite.png"
+dest_files=[ "res://.import/LogsSprite.png-50827df04758806086a6b462b39989da.stex" ]
 
 [params]
 

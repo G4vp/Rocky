@@ -3,7 +3,7 @@ using System;
 
 public class EntitySpawner : Node2D
 {   
-    PackedScene WoodScene;
+    PackedScene LogsScene;
     PackedScene CrabScene;
     PackedScene ParrotScene;
     PackedScene OrangeBallScene;
@@ -14,7 +14,7 @@ public class EntitySpawner : Node2D
     public override void _Ready()
     {
         rng.Randomize();
-        WoodScene = GD.Load<PackedScene>("res://Scenes/Entities/Wood.tscn");
+        LogsScene = GD.Load<PackedScene>("res://Scenes/Entities/Logs.tscn");
         CrabScene = GD.Load<PackedScene>("res://Scenes/Entities/Crab.tscn");
         ParrotScene = GD.Load<PackedScene>("res://Scenes/Entities/Parrot.tscn");
         OrangeBallScene = GD.Load<PackedScene>("res://Scenes/Entities/OrangeBall.tscn");
@@ -40,8 +40,8 @@ public class EntitySpawner : Node2D
         
         switch(MyRandomNumber){
             case 0:
-                var WoodInstance = WoodScene.Instance();
-                Entities.AddChild(WoodInstance);
+                var LogsInstance = LogsScene.Instance();
+                Entities.AddChild(LogsInstance);
                 break;
             case 1:
                 var CrabInstance = CrabScene.Instance();
